@@ -281,7 +281,22 @@ public class Practice {
      * @return a legtöbb veszteséget tartalmazó hónap index-száma
      */
     public static int getWorstMonthIndex(int[][] lossesPerMonths) {
-        return -1;
+
+        int[] sumLossesPerMonths = new int[lossesPerMonths.length];
+        int worsMonthIndex = 0;
+
+        for (int i = 0; i < lossesPerMonths.length; i++) {
+            for (int j = 0; j < lossesPerMonths[i].length; j++) {
+                sumLossesPerMonths[i] += lossesPerMonths[i][j];
+            }
+        }
+
+        for (int k = 0; k < sumLossesPerMonths.length - 1; k++) {
+            if (sumLossesPerMonths[k] < sumLossesPerMonths[k + 1]) {
+                worsMonthIndex = k + 1;
+            }
+        }
+        return worsMonthIndex;
     }
 
     /**
