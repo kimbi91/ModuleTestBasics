@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Locale;
+
 /**
  * A technológia fejlődésének hála az emberiség képessé vált az űr meghódítására
  * - és meg is tette azt: számtalan bolygót fedezett fel, és gyarmatosított.
@@ -36,7 +38,21 @@ public class Practice {
      * @return a pajzs ereje
      */
     public static int getShieldPower(String shipClass) {
-        return -1;
+
+        switch (shipClass.toLowerCase(Locale.ROOT)) {
+            case "intrepid":
+                return 100;
+            case "nova":
+                return 200;
+            case "raven":
+                return 300;
+            case "galaxy":
+                return 500;
+            case "dreadnought":
+                return 800;
+            default:
+                return 0;
+        }
     }
 
     /**
