@@ -157,7 +157,13 @@ public class Practice {
      * @return a teljes sereg száma
      */
     public static int sumArmy(int[] armyOfPlanets) {
-        return -1;
+
+        int sum = 0;
+
+        for (int planet : armyOfPlanets) {
+            sum += planet;
+        }
+        return sum;
     }
 
     /**
@@ -176,7 +182,15 @@ public class Practice {
      * @return a megnyert csaták darabszáma
      */
     public static int countVictories(int[] battles) {
-        return -1;
+
+        int wonBattles = 0;
+
+        for (int battle : battles) {
+            if (battle > 0) {
+                wonBattles++;
+            }
+        }
+        return wonBattles;
     }
 
     /**
