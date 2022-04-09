@@ -324,6 +324,20 @@ public class Practice {
      */
     public static void sortShipsByPower(String[] shipNames, int[] shipPowers) {
 
+        for (int i = 0; i < shipPowers.length - 1; i++) {
+            for (int j = 0; j < shipPowers.length - i - 1; j++) {
+                if (shipPowers[j] < shipPowers[j + 1]) {
+                    int temp = shipPowers[j];
+                    shipPowers[j] = shipPowers[j + 1];
+                    shipPowers[j + 1] = temp;
+
+                    String tempName = shipNames[j];
+                    shipNames[j] = shipNames[j + 1];
+                    shipNames[j + 1] = tempName;
+                }
+            }
+        }
+
     }
 
     // --------------------------------------------------------------------------------------
