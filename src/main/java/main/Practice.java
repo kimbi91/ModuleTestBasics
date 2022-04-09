@@ -382,6 +382,22 @@ public class Practice {
      * @return fognak-e harcolni
      */
     public static boolean willTheyFight(int s1, int t1, int s2, int t2) {
+
+        int current1 = s1, current2 = s2;
+
+        if (s1 == s2) {
+            return true;
+        }
+
+        while (current1 < Integer.MAX_VALUE - current1 && current2 < Integer.MAX_VALUE - current2) {
+            current1 += t1;
+            current2 += t2;
+
+            if (current1 == current2) {
+                return true;
+            }
+        }
+
         return false;
     }
 
