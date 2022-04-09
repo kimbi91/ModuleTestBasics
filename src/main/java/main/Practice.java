@@ -242,7 +242,14 @@ public class Practice {
      * @return az eredeti üzenet karakterei fordított sorrendben
      */
     public static char[] reverseMessage(char[] message) {
-        return null;
+        char[] messageReversed = new char[message.length];
+
+        for (int i = 0; i < message.length; i++) {
+            messageReversed[i] = message[message.length - 1 - i];
+        }
+
+
+        return messageReversed;
     }
 
     /**
